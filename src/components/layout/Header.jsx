@@ -11,7 +11,7 @@ export function Header() {
   const [change, setChange] = useState(false);
 
   return (
-    <div className="flex header items-center justify-between w-full pt-2 gap-6">
+    <div className="flex header items-center justify-between w-full px-[20px] pt-2 gap-6">
       <div className="flex items-center gap-12  xl:justify-center">
         <span>
           <svg
