@@ -5,20 +5,30 @@ export function MainSmallBoxes() {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
 
-
   useEffect(() => {
     setName(faker.person.fullName());
     setImage(faker.image.avatar());
   }, []);
   return (
-    <div className="relative text-white w-full h-fit cursor-pointer group ">
-      {image ? <img className="h-34 min-w-34  rounded-md" src={image} alt="" /> : <p className="text-white font-bold text-xl">loading...</p>}
+    <div className="relative text-white w-full h-fit hover:bg-  max-w-[173px] cursor-pointer group ">
+      {image ? (
+        <img
+          className="h-[153px] min-w-[153px]  rounded-[6px]"
+          src={image}
+          alt=""
+        />
+      ) : (
+        <p className="text-white font-bold text-xl">loading...</p>
+      )}
+      <div>
+        <h2 className="flex gap-2 "></h2>
+        <p className="text-sm brake-words line-clamp-2  text-white/80 hover:underline decoration-1  mt-3">
+          {name},{name}
+        </p>
+      </div>
 
-      <p className="text-sm text-white/60 hover:underline decoration-1  mt-3">
-        {name},{name}
-      </p>
-      <div className="opacity-0 flex absolute shadow-md shadow-black/30 top-19 right-1 justify-center items-center group-hover:opacity-100 duration-250 transition-all group-hover:translate-y-0 translate-y-2 scale-90 bg-green-500 rounded-full h-13 w-13">
-        <FaPlay className="text-black ml-1 text-xl" />
+      <div className="opacity-0 hover:scale-101 flex absolute shadow-md shadow-black/30 top-23 right-1 justify-center items-center group-hover:opacity-100 duration-250 transition-all group-hover:translate-y-0 translate-y-2 scale-90 bg-[#1ed760;] rounded-full h-[55px] w-[55px]">
+        <FaPlay className="text-black ml-1 text-[20px]" />
       </div>
     </div>
   );
