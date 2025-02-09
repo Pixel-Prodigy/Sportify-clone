@@ -11,8 +11,8 @@ export function Header() {
   const [change, setChange] = useState(false);
 
   return (
-    <div className="flex header items-center justify-between w-full  px-[20px] pt-2 gap-6">
-      <div className="flex items-center gap-12  xl:justify-center">
+    <div className="flex header  items-center justify-between w-full  px-[20px] pt-2 gap-6">
+      <div className="flex items-center gap-8  xl:justify-center">
         <span>
           <svg
             role="img"
@@ -34,8 +34,8 @@ export function Header() {
           <span>
             <FaHome className="fill-white cursor-pointer  text-[36px]" />
           </span>
-          <span
-            className={` group flex items-center h-14 px-6 ml-4 sm:w-80 md:w-130 w-80  justify-between py-1 
+          <div
+            className={` group flex items-center h-[51px] px-6 ml-4 sm:w-80 md:w-130 w-80  justify-between py-1 
             hover:bg-[#2f2f2f] transition-all duration-300 rounded-full bg-[#1f1f1f] 
             text-white border-2 border-transparent ${
               change ? "border-white" : "hover:border-white/20"
@@ -56,11 +56,11 @@ export function Header() {
             <span className="border-l-[1px] hidden md:flex border-white/50 h-8  items-center pl-4 cursor-pointer">
               <FaThLarge className="text-white/80 transform transition-transform text-2xl cursor-pointer hover:scale-110 duration-200 hover:text-white" />
             </span>
-          </span>
+          </div>
         </div>
       </div>
-      <div className="flex gap-10 items-center 2xl">
-        <button className="bg-white text-black font-bold hidden xl:block  rounded-full cursor-pointer w-48 hover:scale-105 transition-transform h-10 text-lg">
+      <div className="flex gap-7 items-center 2xl">
+        <button className="bg-white text-black font-bold hidden lg:block text-sm  rounded-full cursor-pointer w-[143px] hover:scale-105 transition-transform h-[33px] text-lg">
           Explore Premium
         </button>
         <span className="text-white/70 hover:scale-105 cursor-pointer transition-transform hover:text-white flex gap-2 items-center">
