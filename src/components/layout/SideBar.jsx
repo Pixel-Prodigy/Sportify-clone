@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaThumbtack } from "react-icons/fa";
 import { SideBarItem } from "../ui/sideBar/SideBarItem";
 import {
@@ -9,32 +9,50 @@ import {
   FaSearch,
 } from "react-icons/fa";
 export function SideBar() {
+  const [show, setShow] = useState(false);
+  if (!show) {
+    return (
+      <div className=" flex max-w-20 items-center bg-[#121212] rounded-lg py-6 px-3  flex-col gap-4">
+        <button className="p-2 cursor-pointer mb-2" onClick={() => setShow(true)}>
+          <FaBook className="text-[1.3rem] text-white" />
+        </button>
+        <img className="h-14 rounded-[6px]" src="https://picsum.photos/100/100" alt="" />
+        <img className="h-14 rounded-[6px]" src="https://picsum.photos/100/100" alt="" />
+        <img className="h-14 rounded-[6px]" src="https://picsum.photos/100/100" alt="" />
+        <img className="h-14 rounded-[6px]" src="https://picsum.photos/100/100" alt="" />
+        <img className="h-14 rounded-[6px]" src="https://picsum.photos/100/100" alt="" />
+      </div>
+    );
+  }
   return (
-    <div className="text-white sidebar bg-[#121212] rounded-lg py-6 px-4  flex flex-col gap-3 ">
-      <div className="flex justify-between   items-center">
-        <div className="flex gap-3  items-center hover:text-white transition-colors duration-500 cursor-pointer text-white/70 ">
-          <span>
-            <FaBook className="text-xl " />
-          </span>
-          <span className="text-md font-bold">Your Library</span>
+    <div className="text-white sidebar bg-[#121212] xl:w-140 2xl:w-140 w-110   rounded-lg py-6 px-4  flex flex-col gap-3 ">
+      <div className="flex items-center justify-between">
+        <div
+          onClick={() => setShow(false)}
+          className="flex items-center gap-3 transition-colors duration-500 cursor-pointer hover:text-white text-white/60 "
+        >
+          <button className="px-2 py-2">
+            <FaBook className="text-[1.3rem] " />
+          </button>
+          <span className="text-[1.2rem] mb-1 font-semibold">Your Library</span>
         </div>
-        <div className=" flex gap-5 items-center ">
+        <div className="flex items-center gap-5 ">
           <span>
-            <FaPlus className="text-white/70 hover:text-white transition-colors duration-400" />
+            <FaPlus className="transition-colors text-white/70 hover:text-white duration-400" />
           </span>
           <span>
-            <FaArrowRight className="text-white/70 hover:text-white transition-colors duration-400" />
+            <FaArrowRight className="transition-colors text-white/70 hover:text-white duration-400" />
           </span>
         </div>
       </div>
       <div></div>
-      <div className="flex justify-between items-center">
+      <div className="flex items-center justify-between">
         <div>
           <span>
-            <FaSearch className="text-lg  text-white/70 hover:text-white  pointer" />
+            <FaSearch className="text-lg text-white/60 hover:text-white pointer" />
           </span>
         </div>
-        <div className="flex items-center gap-2  text-white/70 hover:text-white  hover:scale-100 scale-95 text-md">
+        <div className="flex items-center gap-2 scale-95 text-white/70 hover:text-white hover:scale-100 text-md">
           <span className=" mt-[1px]">Recent</span>
           <span className="">
             <FaListUl />
