@@ -12,7 +12,8 @@ export function SideBar() {
   const [show, setShow] = useState(false);
   if (!show) {
     return (
-      <div className=" flex max-w-20 items-center bg-[#121212] rounded-lg py-6 px-3  flex-col gap-4">
+    
+      <div className=" flex max-w-20 items-center h-full bg-[#121212] rounded-lg py-6 px-3  flex-col gap-4">
         <button className="p-2 cursor-pointer mb-2" onClick={() => setShow(true)}>
           <FaBook className="text-[1.3rem] text-white" />
         </button>
@@ -25,7 +26,8 @@ export function SideBar() {
     );
   }
   return (
-    <div className="text-white sidebar bg-[#121212] xl:w-140 2xl:w-140 w-110   rounded-lg py-6 px-4  flex flex-col gap-3 ">
+    <div className="h-full">
+    <div className="text-white sidebar bg-[#121212] h-[93vh] xl:w-140 2xl:w-140 w-110   rounded-lg py-6 px-4  flex flex-col gap-3 ">
       <div className="flex items-center justify-between">
         <div
           onClick={() => setShow(false)}
@@ -64,6 +66,7 @@ export function SideBar() {
           return <SideBarItem key={index} />;
         })}
       </div>
+    </div>
     </div>
   );
 }
