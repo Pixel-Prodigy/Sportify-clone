@@ -11,12 +11,12 @@ export function Header() {
   const [change, setChange] = useState(false);
 
   return (
-    <div className="flex header  items-center justify-between w-full  px-[20px] pt-2 gap-6">
-      <div className="flex items-center gap-8  xl:justify-center">
+    <div className="flex header items-center justify-between w-full  px-[20px] pt-2 gap-6">
+      <div className="flex items-center gap-8 xl:justify-center">
         <span>
           <svg
             role="img"
-            viewBox="0 0 24 24"
+            viewBox="0 0 24 24" 
             height="32"
             className="cursor-pointer"
             data-encore-id="logoSpotify"
@@ -29,48 +29,48 @@ export function Header() {
             ></path>
           </svg>
         </span>
-        <div className=" flex items-center w-full  ">
+        <div className="flex items-center  w-full ">
           {" "}
           <span>
             <FaHome className="fill-white cursor-pointer  text-[36px]" />
           </span>
           <div
-            className={` group flex items-center h-[51px] px-6 ml-4 sm:w-80 md:w-130 w-80  justify-between py-1 
+            className={` group flex items-center h-[51px] px-6 ml-4 sm:w-80 md:w-130 w-80  justify-between 
             hover:bg-[#2f2f2f] transition-all duration-300 rounded-full bg-[#1f1f1f] 
             text-white border-2 border-transparent ${
               change ? "border-white" : "hover:border-white/20"
             }`}
           >
             <span className="flex items-center">
-              <FaSearch className=" text-2xl transition-color duration-600 text-white/60 group-hover:text-white/100 mr-5 stroke-1 cursor-pointer" />
+              <FaSearch className="mr-5 text-2xl cursor-pointer stroke-1  transition-color duration-600 text-white/60 group-hover:text-white/100" />
               <input
               onClick={() => setChange(true)}
               onBlur={() => setChange(false)}
               tabIndex={0}
               type="text"
-              className="  outline-none md:xl sm:text-lg text-md"
+              className="outline-none  md:xl sm:text-lg text-md"
               placeholder="What do you want to play?"
             />
            </span>
             
             <span className="border-l-[1px] hidden md:flex border-white/50 h-8  items-center pl-4 cursor-pointer">
-              <FaThLarge className="text-white/80 transform transition-transform text-2xl cursor-pointer hover:scale-110 duration-200 hover:text-white" />
+              <FaThLarge className="text-2xl transition-transform duration-200 transform cursor-pointer text-white/80 hover:scale-110 hover:text-white" />
             </span>
           </div>
         </div>
       </div>
-      <div className="flex gap-7 items-center 2xl">
-        <button className="bg-white text-black font-bold hidden lg:block text-sm  rounded-full cursor-pointer w-[143px] hover:scale-105 transition-transform h-[33px] text-lg">
+      <div className="flex items-center gap-7 2xl">
+        <button className="bg-white text-black font-bold hidden lg:block text-sm  rounded-full cursor-pointer w-[143px] hover:scale-105 transition-transform h-[33px] ">
           Explore Premium
         </button>
-        <span className="text-white/70 hover:scale-105 cursor-pointer transition-transform hover:text-white flex gap-2 items-center">
+        <span className="flex items-center gap-2 transition-transform cursor-pointer text-white/70 hover:scale-105 hover:text-white">
           <FaDownload className="text-lg " /> Install App
         </span>
         <span>
           {" "}
-          <FaBell className=" hover:scale-110 cursor-pointer text-white/70 transition-transform hover:text-white   text-lg" />
+          <FaBell className="text-lg transition-transform cursor-pointer  hover:scale-110 text-white/70 hover:text-white" />
         </span>
-        <span className=" cursor-pointer h-10 w-10 bg-amber-700/80 rounded-full flex items-center justify-center">
+        <span className="flex items-center justify-center w-10 h-10 rounded-full cursor-pointer  bg-amber-700/80">
           <p className="cursor-pointer">S</p>
         </span>
       </div>
